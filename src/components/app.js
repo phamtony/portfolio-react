@@ -6,6 +6,7 @@ import 'aos/dist/aos.css';
 import AOS from 'aos';
 
 import './app.css';
+import {mobileMenu, stickyHeader} from './page';
 import NavBar from './NavBar';
 import SocialContact from './SocialContact';
 import Intro from './Intro';
@@ -19,6 +20,8 @@ import Footer from './Footer';
 const App = () => {
     useEffect(() => {
         AOS.init();
+        mobileMenu();
+        stickyHeader();
     }, []);
 
     return (

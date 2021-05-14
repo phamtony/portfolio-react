@@ -164,7 +164,7 @@ a:hover {
 .blur {
     overflow: hidden;
 }
-.blur #root {
+.container.blur {
     filter: blur(3px);
 }
 @media screen and (max-width: 576px) {
