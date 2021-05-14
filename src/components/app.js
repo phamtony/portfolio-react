@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 
