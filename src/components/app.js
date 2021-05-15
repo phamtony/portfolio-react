@@ -1,4 +1,5 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min';
@@ -18,20 +19,42 @@ import Connect from './Connect';
 import Footer from './Footer';
 
 const App = () => {
+    const [data, setData] = useState('');
+
+    const fetchPortfolio = async () => {
+        const response = await axios.get('https://portfolio-api.com/json', {
+            params: {
+                api: 'N2DQ13yEcoUqZPYfqJWtHhVg'
+            }
+        });
+        setData(response.data);
+    };
+
     useEffect(() => {
-        AOS.init();
-        mobileMenu();
-        stickyHeader();
+        if (data === '') {
+            AOS.init();
+            // mobileMenu();
+            // stickyHeader();
+        }
+
+        fetchPortfolio();
     }, []);
+
+    if (data === '') {
+        return (
+            <div>Still Loading...</div>
+        );
+    }
+
 
     return (
         <>
             <NavBar/>
-            <SocialContact/>
+            <SocialContact data={data}/>
 
             <div className="container">
-                <Intro/>
-                <About/>
+                <Intro data={data} />
+                <About data={data}/>
                 <Experience/>
                 <Project/>
                 <SkillsEducation/>

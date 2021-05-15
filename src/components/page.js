@@ -54,7 +54,6 @@ export const stickyHeader = () => {
 
 export const mobileMenu = () => {
     const viewPortWidth = window.innerWidth;
-    const viewPortHeight = document.documentElement.clientHeight;
     const offCanvasToggle = document.querySelector('[data-bs-target="#navbarNav"]');
     const offCanvasCollapse = document.querySelector('.off-canvas');
     const offCanvasLinks = document.querySelectorAll('.off-canvas a');

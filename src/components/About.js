@@ -1,6 +1,6 @@
 import React from 'react';
 
-const About = () => {
+const About = ({data}) => {
     return (
         <div className="row justify-content-center" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000"
              data-aos-easing="ease-in-out">
@@ -10,7 +10,9 @@ const About = () => {
                 </div>
                 <h2 className="tan mb-4">About Me</h2>
                 <div className="row">
+
                     <div className="col-md-7 col-lg-8 pb-5 pb-md-0">
+                        {/*{data.about.intro}*/}
                         <p>
                             Initially, I aspired to be in the music industry. I then later earned my undergrad in
                             accounting. During that time, I self-studied computer science concepts in my 3rd year of
@@ -45,10 +47,11 @@ const About = () => {
                             </div>
                         </div>
                     </div>
+
                     <div className="col-md-5 col-lg-4">
                         <div className="about-me__picture text-center">
                             <img className="w-100"
-                                 src="https://media-exp1.licdn.com/dms/image/C5603AQGPYPBtm321EA/profile-displayphoto-shrink_800_800/0/1613701378861?e=1623283200&v=beta&t=ks0icZPF2BDyNOTrnimul44y0TvdGTq8Rq-gkYoCb90"
+                                 src={`${window.imagePath}/${data.about.image}`}
                                  alt="" />
                         </div>
                     </div>
