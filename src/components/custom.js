@@ -76,10 +76,12 @@ export const mobileMenu = () => {
         });
     }
 
-    offCanvasToggle.addEventListener('click', () => {
-        if (viewPortWidth < 576) {
-            toggleMobile();
-        }
-    });
+    if (offCanvasToggle) {
+        offCanvasToggle.addEventListener('click', () => {
+            if (viewPortWidth < 576) {
+                toggleMobile();
+            }
+        });
+    }
 
 };
