@@ -6,9 +6,9 @@ const SkillsEducation = ({data}) => {
         return skillList.join(' | ');
     };
 
-    const renderEducationList = data.education.map((ed, index) => {
+    const renderEducationList = data.education.map((ed) => {
         return (
-            <div key={index}>
+            <div key={`education_${ed.id}`}>
                 <h6 className="mb-0">{ed.school} | {ed.time}</h6>
                 <p>{ed.degree}</p>
             </div>

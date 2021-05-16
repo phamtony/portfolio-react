@@ -1,6 +1,6 @@
 import React from 'react';
 
-const About = ({data}) => {
+const About = ({data, imagePath}) => {
     return (
         <div className="row justify-content-center" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000"
              data-aos-easing="ease-in-out">
@@ -18,7 +18,7 @@ const About = ({data}) => {
                     <div className="col-md-5 col-lg-4">
                         <div className="about-me__picture text-center">
                             <img className="w-100"
-                                 src={`${window.imagePath}/${data.about.image}`}
+                                 src={`${imagePath}/${data.about.image}`}
                                  alt="portrait of me" />
                         </div>
                     </div>

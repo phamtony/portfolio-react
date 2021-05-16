@@ -7,7 +7,7 @@ const Experience = ({data}) => {
         const startIndex = index === 0 ? true : false;
 
         return (
-            <li className="nav-item" role="presentation" key={index}>
+            <li className="nav-item" role="presentation" key={`experience_${store.id}`}>
                 <button className={`nav-link ${startIndex ? 'active' : ''}`} id={`pills-${storeName}-tab`} data-bs-toggle="pill"
                         data-bs-target={`#pills-${storeName}`} type="button" role="tab"
                         aria-controls={`pills-${storeName}`} aria-selected={startIndex ? 'true' : 'false'}>
@@ -23,7 +23,7 @@ const Experience = ({data}) => {
 
         return (
             <div className={`tab-pane fade ${startIndex ? 'show active' : ''}`} id={`pills-${storeName}`} role="tabpanel"
-                 aria-labelledby={`pills-${storeName}-tab`}>
+                 aria-labelledby={`pills-${storeName}-tab`} key={`experience_details_${store.id}`}>
                 <h6 className="mb-0">{store.position} - <span className="fw-light"><a
                     className="text-decoration-none tan" href={store.link}
                     target="_blank" rel="noopener noreferrer">{store.name}</a></span></h6>

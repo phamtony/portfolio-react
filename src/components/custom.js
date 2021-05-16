@@ -1,28 +1,18 @@
-// function debounce(func, wait, immediate) {
-//     var timeout;
-//     return function() {
-//         var context = this, args = arguments;
-//         var later = function() {
-//             timeout = null;
-//             if (!immediate) func.apply(context, args);
-//         };
-//         var callNow = immediate && !timeout;
-//         clearTimeout(timeout);
-//         timeout = setTimeout(later, wait);
-//         if (callNow) func.apply(context, args);
-//     };
-// }
-//
-// viewPortWidth =  window.innerWidth;
-// viewPortHeight = document.documentElement.clientHeight;
-//
-// window.addEventListener('resize', debounce(function () {
-//     viewPortWidth =  window.innerWidth;
-//     viewPortHeight = document.documentElement.clientHeight;
-// }, 400))
+const debounce = (func, wait, immediate) => {
+    let timeout;
+    return function () {
+        let context = this, args = arguments;
+        let later = function () {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        let callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+};
 
-
-// Sticky header
 export const stickyHeader = () => {
     const header = document.querySelector('.navbar');
     let last_scroll_position = window.scrollY;
@@ -51,9 +41,14 @@ export const stickyHeader = () => {
     });
 };
 
-
 export const mobileMenu = () => {
-    const viewPortWidth = window.innerWidth;
+    let viewPortWidth =  window.innerWidth;
+
+    window.addEventListener('resize', debounce(() => {
+        viewPortWidth = window.innerWidth;
+    }, 400));
+
+
     const offCanvasToggle = document.querySelector('[data-bs-target="#navbarNav"]');
     const offCanvasCollapse = document.querySelector('.off-canvas');
     const offCanvasLinks = document.querySelectorAll('.off-canvas a');
@@ -76,10 +71,12 @@ export const mobileMenu = () => {
         });
     }
 
-    offCanvasToggle.addEventListener('click', () => {
-        if (viewPortWidth < 576) {
-            toggleMobile();
-        }
-    });
+    if (offCanvasToggle) {
+        offCanvasToggle.addEventListener('click', () => {
+            if (viewPortWidth < 576) {
+                toggleMobile();
+            }
+        });
+    }
 
 };

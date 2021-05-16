@@ -7,19 +7,22 @@ import 'aos/dist/aos.css';
 import AOS from 'aos';
 
 import './app.css';
-import {mobileMenu, stickyHeader} from './page';
-import NavBar from './NavBar';
-import SocialContact from './SocialContact';
-import Intro from './Intro';
-import About from './About';
-import Experience from './Experience';
-import Project from './Project';
-import SkillsEducation from './SkillsEducation';
-import Connect from './Connect';
-import Footer from './Footer';
+import {mobileMenu, stickyHeader} from './custom';
+import NavBar from './NavBar/NavBar';
+import SocialContact from './SocialContact/SocialContact';
+import Intro from './Intro/Intro';
+import About from './About/About';
+import Experience from './Experience/Experience';
+import Project from './Project/Project';
+import SkillsEducation from './SkillsEducation/SkillsEducation';
+import Connect from './Connect/Connect';
+import Footer from './Footer/Footer';
+import Loader from './Loader/Loader';
+
 
 const App = () => {
     const [data, setData] = useState('');
+    const imagePath = 'https://portfolio--api.s3-us-west-1.amazonaws.com';
 
     const fetchPortfolio = async () => {
         const response = await axios.get('https://portfolio-api.com/json', {
@@ -28,24 +31,22 @@ const App = () => {
             }
         });
         setData(response.data);
+
+        AOS.init();
+        mobileMenu();
+        stickyHeader();
     };
 
     useEffect(() => {
-        if (data === '') {
-            AOS.init();
-            // mobileMenu();
-            // stickyHeader();
-        }
-
         fetchPortfolio();
     }, []);
 
+
     if (data === '') {
         return (
-            <div>Still Loading...</div>
+            <Loader />
         );
     }
-
 
     return (
         <>
@@ -54,9 +55,9 @@ const App = () => {
 
             <div className="container">
                 <Intro data={data}/>
-                <About data={data}/>
+                <About data={data} imagePath={imagePath}/>
                 <Experience data={data.experience}/>
-                <Project data={data.projects}/>
+                <Project data={data.projects} imagePath={imagePath}/>
                 <SkillsEducation data={data}/>
                 <Connect email={data.general.email}/>
             </div>
