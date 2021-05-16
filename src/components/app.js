@@ -24,7 +24,7 @@ const App = () => {
     const fetchPortfolio = async () => {
         const response = await axios.get('https://portfolio-api.com/json', {
             params: {
-                api: 'N2DQ13yEcoUqZPYfqJWtHhVg'
+                api: 'sJfvLXK6yNeszieYlwGotBrf'
             }
         });
         setData(response.data);
@@ -53,15 +53,15 @@ const App = () => {
             <SocialContact data={data}/>
 
             <div className="container">
-                <Intro data={data} />
+                <Intro data={data}/>
                 <About data={data}/>
-                <Experience/>
-                <Project/>
-                <SkillsEducation/>
-                <Connect/>
+                <Experience data={data.experience}/>
+                <Project data={data.projects}/>
+                <SkillsEducation data={data}/>
+                <Connect email={data.general.email}/>
             </div>
 
-            <Footer/>
+            <Footer data={data}/>
         </>
     );
 };

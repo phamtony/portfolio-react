@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Connect = () => {
+const Connect = ({email}) => {
     return (
         <div className="row justify-content-center" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000"
              data-aos-easing="ease-in-out">
@@ -14,9 +14,8 @@ const Connect = () => {
                         <p className="text-center">
                             Want to collab, ask me questions, or just chat? Email me or message me via LinkedIn!
                         </p>
-
                         <div className="text-center pt-4">
-                            <a href="mailto:tonypham.programmer@gmail.com">
+                            <a href={`mailto:${email}`}>
                                 <button className="connect-button button-strip">Connect</button>
                             </a>
                         </div>

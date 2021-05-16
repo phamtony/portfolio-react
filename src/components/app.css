@@ -1,6 +1,8 @@
 /***************************/
 /***       General      ***/
 /***************************/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:wght@300;400;500&display=swap');
+
 :root {
     --white: #fff;
     --black: #000;
@@ -277,6 +279,7 @@ footer p {
     opacity: 0;
 }
 .projects__image-header--tech span {
+    margin: 0 2px;
     font-size: 11px;
     padding: 4px 8px;
     border-radius: 4px;
