@@ -1,6 +1,20 @@
 import React from 'react';
 
-const SkillsEducation = () => {
+const SkillsEducation = ({data}) => {
+    const renderSkills = (list) => {
+        const skillList = list.split(',');
+        return skillList.join(' | ');
+    };
+
+    const renderEducationList = data.education.map((ed, index) => {
+        return (
+            <div key={index}>
+                <h6 className="mb-0">{ed.school} | {ed.time}</h6>
+                <p>{ed.degree}</p>
+            </div>
+        );
+    });
+
     return (
         <div className="row justify-content-center" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000"
              data-aos-easing="ease-in-out">
@@ -9,33 +23,25 @@ const SkillsEducation = () => {
                     <div id="skills"></div>
                 </div>
                 <div className="row">
+
                     <div className="col-lg-6 pb-4 pb-lg-0 pe-lg-4">
                         <h2 className="tan mb-4">Skills</h2>
                         <h6 className="mb-0"><strong>Language</strong></h6>
-                        <p>Javascript | PHP | Python | Ruby | Java | C#</p>
+                        <p>{renderSkills(data.skills.language)}</p>
 
                         <h6 className="mb-0"><strong>Framework/Library</strong></h6>
-                        <p>Symfony | React | Redux | React Native | Flask | Node.js | Ruby on Rails | AngularJS</p>
+                        <p>{renderSkills(data.skills.framework_library)}</p>
 
                         <h6 className="mb-0"><strong>Database</strong></h6>
-                        <p>MySQL | PostgreSQL | MSSQL | MongoDB</p>
+                        <p>{renderSkills(data.skills.database)}</p>
 
                         <h6 className="mb-0"><strong>Other</strong></h6>
-                        <p>HTML/CSS | Webpack | Babel</p>
+                        <p>{renderSkills(data.skills.misc)}</p>
                     </div>
 
                     <div className="col-lg-6 ps-lg-4">
                         <h2 className="tan mb-4">Education</h2>
-
-                        <h6 className="mb-0">Boston University | 2013 – 2015</h6>
-                        <p>Master of Science in Computer Science</p>
-
-                        <h6 className="mb-0">California State University-Long Beach | 2009 – 2013</h6>
-                        <p>Bachelor of Science in Accounting</p>
-
-                        <h6 className="mb-0">Musicians Institute | 2007 – 2008</h6>
-                        <p>Certificate in Audio Engineer</p>
-
+                        {renderEducationList}
                     </div>
                 </div>
             </div>
