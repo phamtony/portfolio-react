@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Project = ({data}) => {
+const Project = ({data, imagePath}) => {
     const renderProjectSkills = (id, list) => {
         const skillList = list.split(', ');
         return skillList.map((skill, index) => {
@@ -13,7 +13,7 @@ const Project = ({data}) => {
             <div className="col-lg-6 mb-4 projects__card" key={`project_${project.id}`}>
                 <div className="projects__image-container">
                     <a href={project.link} rel="noopener noreferrer" target="_blank">
-                        <img className="w-100 projects__image" src={`${window.imagePath}/${project.screenshot}`} alt="project screenshot" />
+                        <img className="w-100 projects__image" src={`${imagePath}/${project.screenshot}`} alt="project screenshot" />
 
                         <div className="projects__image-header">
                             <h4>{project.name}</h4>

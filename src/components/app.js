@@ -22,6 +22,7 @@ import Loader from './Loader/Loader';
 
 const App = () => {
     const [data, setData] = useState('');
+    const imagePath = 'https://portfolio--api.s3-us-west-1.amazonaws.com';
 
     const fetchPortfolio = async () => {
         const response = await axios.get('https://portfolio-api.com/json', {
@@ -54,9 +55,9 @@ const App = () => {
 
             <div className="container">
                 <Intro data={data}/>
-                <About data={data}/>
+                <About data={data} imagePath={imagePath}/>
                 <Experience data={data.experience}/>
-                <Project data={data.projects}/>
+                <Project data={data.projects} imagePath={imagePath}/>
                 <SkillsEducation data={data}/>
                 <Connect email={data.general.email}/>
             </div>
