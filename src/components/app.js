@@ -7,7 +7,7 @@ import 'aos/dist/aos.css';
 import AOS from 'aos';
 
 import './app.css';
-import {mobileMenu, stickyHeader} from './custom';
+import {mobileMenu, stickyHeader, anchorReload} from './custom';
 import NavBar from './NavBar/NavBar';
 import SocialContact from './SocialContact/SocialContact';
 import Intro from './Intro/Intro';
@@ -20,7 +20,7 @@ import Footer from './Footer/Footer';
 import Loader from './Loader/Loader';
 
 
-const App = () => {
+const App = (props) => {
     const [data, setData] = useState('');
     const imagePath = 'https://portfolio--api.s3-us-west-1.amazonaws.com';
 
@@ -35,6 +35,7 @@ const App = () => {
         AOS.init();
         mobileMenu();
         stickyHeader();
+        anchorReload();
     };
 
     useEffect(() => {

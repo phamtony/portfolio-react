@@ -80,3 +80,11 @@ export const mobileMenu = () => {
     }
 
 };
+
+export const anchorReload = () => {
+    const baseUrl = window.location.href.split('#')[1];
+    const el = document.getElementById(baseUrl);
+    if (el) {
+        el.scrollIntoView({behavior: "smooth"})
+    }
+};
