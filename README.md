@@ -2,4 +2,6 @@
 
 ## Porfolio built on create-react-app
 
-Hello, I created https://portfolio-api.com. I'm using portfolio-api public API to populate this react portfolio.
+Hello, I created https://portfolio-api.com. 
+
+I'm using portfolio-api public API to populate this react portfolio.
