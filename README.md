@@ -2,6 +2,6 @@
 
 ## Porfolio built on create-react-app
 
-Hello, I created https://portfolio-api.com. 
+Hello, I created a headless CMS https://portfolio-api.com. 
 
-I'm using portfolio-api public API to populate this react portfolio.
+I'm using the public API to populate this my reactjs portfolio.
