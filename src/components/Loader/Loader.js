@@ -11,14 +11,18 @@ const Loader = () => {
     ];
 
     let index = 0;
-    const timerMsg = setInterval(() => {
-        document.getElementById('loaderMsg').innerHTML = messages[index++];
+    const $loaderMsg = document.getElementById('loaderMsg');
 
-        if (index === messages.length) {
-            clearInterval(timerMsg);
-            return;
-        }
-    }, 4000);
+    if ($loaderMsg) {
+        const timerMsg = setInterval(() => {
+            $loaderMsg.innerHTML = messages[index++];
+
+            if (index === messages.length) {
+                clearInterval(timerMsg);
+                return;
+            }
+        }, 4000);
+    }
 
     return (
         <div className={"d-flex justify-content-center d-flex align-items-center"} style={{height: "100vh"}}>
