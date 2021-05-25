@@ -6,8 +6,8 @@ import 'bootstrap/dist/js/bootstrap.min';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 
-import './app.css';
-import {mobileMenu, stickyHeader, anchorReload} from './custom';
+import '../styles/app.css';
+import {mobileMenu, stickyHeader, anchorReload} from '../custom';
 import NavBar from './NavBar/NavBar';
 import SocialContact from './SocialContact/SocialContact';
 import Intro from './Intro/Intro';
