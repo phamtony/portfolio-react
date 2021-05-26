@@ -20,7 +20,7 @@ import Footer from './Footer/Footer';
 import Loader from './Loader/Loader';
 
 
-const App = (props) => {
+const App = () => {
     const [data, setData] = useState('');
     const imagePath = 'https://portfolio--api.s3-us-west-1.amazonaws.com';
 
