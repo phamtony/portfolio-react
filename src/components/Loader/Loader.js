@@ -19,7 +19,6 @@ const Loader = () => {
 
             if (index === messages.length) {
                 clearInterval(timerMsg);
-                return;
             }
         }, 4000);
     }

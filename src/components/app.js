@@ -8,6 +8,7 @@ import AOS from 'aos';
 
 import '../styles/app.css';
 import {mobileMenu, stickyHeader, anchorReload} from '../custom';
+import * as Constants from '../constants';
 import NavBar from './NavBar/NavBar';
 import SocialContact from './SocialContact/SocialContact';
 import Intro from './Intro/Intro';
@@ -22,12 +23,12 @@ import Loader from './Loader/Loader';
 
 const App = () => {
     const [data, setData] = useState('');
-    const imagePath = 'https://portfolio--api.s3-us-west-1.amazonaws.com';
+    const imagePath = Constants.imageAWSlink;
 
     const fetchPortfolio = async () => {
-        const response = await axios.get('https://portfolio-api.com/json', {
+        const response = await axios.get(Constants.portfolioAPI, {
             params: {
-                api: 'sJfvLXK6yNeszieYlwGotBrf'
+                api: Constants.apiKey,
             }
         });
         setData(response.data);

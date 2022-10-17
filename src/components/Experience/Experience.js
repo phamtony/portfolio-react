@@ -4,7 +4,7 @@ const Experience = ({data}) => {
 
     const renderJobList = data.map((store, index) => {
         const storeName = store.name.replace(/ /g, '').toLowerCase();
-        const startIndex = index === 0 ? true : false;
+        const startIndex = index === 0;
 
         return (
             <li className="nav-item" role="presentation" key={`experience_${store.id}`}>
@@ -19,7 +19,7 @@ const Experience = ({data}) => {
 
     const renderJobDetails = data.map((store, index) => {
         const storeName = store.name.replace(/ /g, '').toLowerCase();
-        const startIndex = index === 0 ? true : false;
+        const startIndex = index === 0;
 
         return (
             <div className={`tab-pane fade ${startIndex ? 'show active' : ''}`} id={`pills-${storeName}`} role="tabpanel"
