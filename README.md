@@ -2,6 +2,8 @@
 
 ## Porfolio built on create-react-app
 
-Hello, I created a headless CMS https://portfolio-api.com. 
+This portfolio is powered by another personal project.
 
-I'm using the public API to populate this my reactjs portfolio.
+I created a simple and tailored headless CMS <a href="https://portfolio-api.com" target="_blank" rel="noopener noreferrer">portfolio-api</a>. It's purpose is to build your "resume" website. 
+
+My porfolio uses the portfolio-api API to populate tonypham.dev
