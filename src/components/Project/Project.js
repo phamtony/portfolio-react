@@ -13,7 +13,8 @@ const Project = ({data, imagePath}) => {
             <div className="col-lg-6 mb-4 projects__card" key={`project_${project.id}`}>
                 <div className="projects__image-container">
                     <a href={project.link} rel="noopener noreferrer" target="_blank">
-                        <img className="w-100 projects__image" src={`${imagePath}/${project.screenshot}`} alt="project screenshot" />
+
+                        {project.screenshot != null ? <img className="w-100 projects__image" src={`${imagePath}/${project.screenshot}`} alt="project screenshot" /> : <img className="w-100 projects__image" src="https://via.placeholder.com/530x300" alt="project screenshot" />}
 
                         <div className="projects__image-header">
                             <h4>{project.name}</h4>
