@@ -25,6 +25,7 @@ const Loader = () => {
             <div className={"text-center"}>
                 <div className="spinner-border" style={{width: "7rem", height: "7rem"}} role="status"></div>
                 <h3 className={"mt-5"} id={"loaderMsg"}>The site may take a bit of time...</h3>
+                <h3 className={"mt-5"} id={"loaderMsg"}>If it's been more than 2 seconds, refresh and my page should come up.</h3>
             </div>
         </div>
     );
