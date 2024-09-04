@@ -21,6 +21,7 @@ const Footer = ({data}) => {
                     </div>
 
                     <p className="tan text-center fw-light">Built by {data.general.name}</p>
+                    <p className="tan text-center fw-light">Powered by ReactJS and <a href="https://portfolio-api.com/" alt="portfolio-api">Portfolio-API</a></p>
                 </div>
             </div>
         </footer>
