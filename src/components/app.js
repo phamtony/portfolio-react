@@ -20,6 +20,11 @@ import Connect from './Connect/Connect';
 import Footer from './Footer/Footer';
 import Loader from './Loader/Loader';
 
+import ReactGA from 'react-ga4';
+
+const TRACKING_ID = 'G-JY4E04E4LD';
+ReactGA.initialize(TRACKING_ID);
+
 
 const App = () => {
     const [data, setData] = useState('');
@@ -40,6 +45,7 @@ const App = () => {
     };
 
     useEffect(() => {
+        ReactGA.send({ hitType: "pageview", page: 'home' });
         fetchPortfolio();
     }, []);
 
